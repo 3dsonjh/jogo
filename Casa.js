@@ -2,15 +2,22 @@ import { useState } from "react";
 import { StyleSheet, View, TouchableWithoutFeedback } from "react-native";
 import Icon from "react-native-vector-icons/Entypo";
 
-export default function Casa(){
+export default function Casa(props){
 
     const[jogador,setJogador] = useState(null);
 
     function jogada(){
-        setJogador(1);
+        setJogador(props.turno);
+        const prox = (props.turno==1)?2:1;
+        props.alternar(prox);
+
+        let novo=props.tabuleiro;
+        novo[props.posicao] = props.turno;
+
+        props.gravar(novo);
     }
-    
-    let icone="";
+
+    let icone=null;
     if(jogador==1){
         icone=<Icon name="cross" size={95} />;
     }
@@ -19,13 +26,12 @@ export default function Casa(){
     }
 
     return(
-        <TouchableWithoutFeedback  onPress={jogada}>
+        <TouchableWithoutFeedback onPress={jogada}>
             <View style={css.casa}>
                 {icone}
             </View>
         </TouchableWithoutFeedback>
     )
-
 }
 
 const css = StyleSheet.create({

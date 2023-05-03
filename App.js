@@ -1,32 +1,89 @@
-import { StyleSheet, View } from "react-native";
+import { StyleSheet, View, Text } from "react-native";
+import { useState } from "react";
 import Icon from "react-native-vector-icons/Entypo";
 import Casa from "./Casa";
 
 export default function App()
 {
+  const inicial = [0,0,0,0,0,0,0,0,0];
 
-  let jogada=0;
-
-  function clique(){
-    console.log("entrou");
-    if(jogada==0){
-      jogada=1;
-    }
-  }
+  const [jogador, setJogador] = useState(1);
+  const [tabuleiro, setTabuleiro] = useState(inicial);
 
   return (
     <View style={css.tela}>
       <View style={css.tabuleiro}>
-        <Casa />
-        <Casa />
-        <Casa />
-        <Casa />
-        <Casa />
-        <Casa />
-        <Casa />
-        <Casa />
-        <Casa />
+
+        <Casa
+          posicao={0}
+          tabuleiro={tabuleiro}
+          gravar={setTabuleiro}
+          turno={jogador}
+          alternar={setJogador}
+        />
+        <Casa
+          posicao={1}
+          tabuleiro={tabuleiro}
+          gravar={setTabuleiro}
+          turno={jogador}
+          alternar={setJogador}
+        />
+        <Casa
+          posicao={2}
+          tabuleiro={tabuleiro}
+          gravar={setTabuleiro}
+          turno={jogador}
+          alternar={setJogador}
+        />
+
+        <Casa
+          posicao={3}
+          tabuleiro={tabuleiro}
+          gravar={setTabuleiro}
+          turno={jogador}
+          alternar={setJogador}
+        />
+        <Casa
+          posicao={4}
+          tabuleiro={tabuleiro}
+          gravar={setTabuleiro}
+          turno={jogador}
+          alternar={setJogador}
+        />
+        <Casa
+          posicao={5}
+          tabuleiro={tabuleiro}
+          gravar={setTabuleiro}
+          turno={jogador}
+          alternar={setJogador}
+        />
+
+        <Casa
+          posicao={6}
+          tabuleiro={tabuleiro}
+          gravar={setTabuleiro}
+          turno={jogador}
+          alternar={setJogador}
+        />
+        <Casa
+          posicao={7}
+          tabuleiro={tabuleiro}
+          gravar={setTabuleiro}
+          turno={jogador}
+          alternar={setJogador}
+        />
+        <Casa
+          posicao={8}
+          tabuleiro={tabuleiro}
+          gravar={setTabuleiro}
+          turno={jogador}
+          alternar={setJogador}
+        />
+
+        
+
       </View>
+      <Text>{tabuleiro} Agora é a vez do jogador {jogador}</Text>
     </View>
   )
 }
@@ -43,7 +100,8 @@ const css = StyleSheet.create({
     width: 300,
     height: 300,
     backgroundColor: "gray",
-    flexWrap: "wrap"
+    flexWrap: "wrap",
+    flexDirection: "row"
   },
   casa : {
     height: 100,
