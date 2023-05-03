@@ -1,19 +1,31 @@
-import { StyleSheet, View } from "react-native"
+import { StyleSheet, View } from "react-native";
+import Icon from "react-native-vector-icons/Entypo";
+import Casa from "./Casa";
 
 export default function App()
 {
+
+  let jogada=0;
+
+  function clique(){
+    console.log("entrou");
+    if(jogada==0){
+      jogada=1;
+    }
+  }
+
   return (
     <View style={css.tela}>
       <View style={css.tabuleiro}>
-        <View style={css.casa}></View>
-        <View style={css.casa}></View>
-        <View style={css.casa}></View>
-        <View style={css.casa}></View>
-        <View style={css.casa}></View>
-        <View style={css.casa}></View>
-        <View style={css.casa}></View>
-        <View style={css.casa}></View>
-        <View style={css.casa}></View>
+        <Casa />
+        <Casa />
+        <Casa />
+        <Casa />
+        <Casa />
+        <Casa />
+        <Casa />
+        <Casa />
+        <Casa />
       </View>
     </View>
   )
@@ -38,6 +50,8 @@ const css = StyleSheet.create({
     width: 100,
     borderColor: "black",
     borderStyle: "solid",
-    borderWidth: 1
+    borderWidth: 1,
+    justifyContent: "center",
+    alignItems: "center"
   }
 });
