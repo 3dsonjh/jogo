@@ -1,7 +1,7 @@
 {
   "expo": {
     "name": "jogo",
-    "slug": "jogo",
+    "slug": "jogo-da-velha",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -21,10 +21,17 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.edsonjh.jogodavelha"
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "extra": {
+      "eas": {
+        "projectId": "ef211627-5997-42a6-9b5a-ab5d465b1710"
+      }
+    },
+    "owner": "3dsonjh"
   }
 }

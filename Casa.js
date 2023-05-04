@@ -8,13 +8,13 @@ export default function Casa(props){
 
     function jogada(){
         setJogador(props.turno);
-        const prox = (props.turno==1)?2:1;
-        props.alternar(prox);
-
+        //const prox = (props.turno==1)?2:1;
+    
         let novo=props.tabuleiro;
         novo[props.posicao] = props.turno;
 
         props.gravar(novo);
+        props.alternar();
     }
 
     let icone=null;
