@@ -150,6 +150,8 @@ const css = StyleSheet.create({
         justifyContent: "center",
     },
     titulo: {
-        fontSize: 25
+        fontSize: 30,
+        fontWeight: 800,
+        //justifyContent: "center"
     }
 });
