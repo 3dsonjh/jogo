@@ -1,4 +1,5 @@
-import { View, StyleSheet, Text, Button} from "react-native"
+import { View, StyleSheet, Text, Button} from "react-native";
+import { SafeAreaView } from 'react-native-safe-area-context';
 import Casa from "./Casa";
 import { useState } from "react";
 
@@ -44,14 +45,17 @@ export default function App()
     
     if(vencedor!=0){
         return(
+            <SafeAreaView>
             <View style={css.tela}>
                 <Text style={css.titulo}>O vencedor é o jogador {vencedor}</Text>
                 <Text></Text>
                 <Button title="Novo Jogo" onPress={novoJogo}></Button>
             </View>
+            </SafeAreaView>
         )
     } else { 
         return (
+            <SafeAreaView>
             <View style={css.tela}>
                 <Text style={css.titulo}>Jogo da Velha</Text>
                 <Text></Text>
@@ -116,6 +120,7 @@ export default function App()
                 <Text></Text>
                 <Text>Agora é a vez do jogador {jogador}</Text>
             </View>
+            </SafeAreaView>
         )
     }
 }
@@ -123,11 +128,11 @@ export default function App()
 const css = StyleSheet.create({
     tela: {
         borderColor: "black",
-        borderWidth: 1,
         borderStyle: "solid",
-        flex: 1,
+        //flex: 1,
         alignItems: "center",
-        justifyContent: "center"
+        justifyContent: "center",
+        paddingTop: 50
     }, 
     tabuleiro: {
         width: 300,
